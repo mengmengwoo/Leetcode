@@ -6,6 +6,6 @@ This repo records my progress and solutions to the Leetcode practice problems wi
 - Easy: 29 | Medium: 35 | Hard: 9
 
 ## Topics
-- [Arrays](./arrays/)
+- [Linked List](./Linked_List/)
 - [Dynamic Programming](./dynamic_programming/)
 - [Graphs](./graphs/)
