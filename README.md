@@ -7,5 +7,4 @@ This repo records my progress and solutions to the Leetcode practice problems wi
 
 ## Topics
 - [Linked List](./Linked_List/)
-- [Dynamic Programming](./dynamic_programming/)
-- [Graphs](./graphs/)
+
