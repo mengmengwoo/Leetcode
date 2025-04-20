@@ -1,6 +1,11 @@
 345. Reverse Vowels of a String
 class Solution:
     def reverseVowels(self, s: str) -> str:
+        '''
+        Note: 1. need to create a set of vowels where the lookup will only take O(1) and space will take O(1)
+            2. string is not mutable
+        '''
+        
         # Time: O(1), Space: O(1)
         vowels = set("aeiouAEIOU") 
         # Time: O(n), Space: O(n)
