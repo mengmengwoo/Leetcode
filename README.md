@@ -4,4 +4,5 @@ This repo records my progress and solutions to the Leetcode practice problems wi
 ## Topics
 - [Linked List](./Linked_List/)
 - [Two Pointer](./Two_Pointer/)
+- [Divide_and_Concur](./Divide_and_Concur/)
 
