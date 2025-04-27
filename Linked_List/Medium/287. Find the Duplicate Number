@@ -1,0 +1,25 @@
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        '''
+        Linked List
+        Floyd's algorithm
+        2slow = fast
+        -> when slow and fast intercept, leave one pointer at the interception and the one pointer at the begining, 
+        -> when the two pointers intercept again, that will be the answer where the cycle begin
+
+        '''
+        # Time: O(n), Space: O(1)
+        slow = fast = 0
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+            if slow == fast:
+                break
+
+        pnt1 = slow
+        pnt2 =0
+        while pnt1 != pnt2:
+            pnt1 = nums[pnt1]
+            pnt2 = nums[pnt2]
+        return pnt1
+        
