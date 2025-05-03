@@ -1,0 +1,9 @@
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        # modify in place to save space instead of creating another preflix_sum list
+        # Time: O(n), Space: O(1)
+        for i in range(1,len(nums)):
+
+            nums[i] = nums[i] + nums[i-1]
+
+        return nums
