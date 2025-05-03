@@ -1,0 +1,11 @@
+class NumArray:
+    # space: O(n)
+    def __init__(self, nums: List[int]):
+        # Time : O(n)
+        self.preflix_sum = [0]*(len(nums)+1)
+        for i in range(len(nums)):
+            self.preflix_sum[i+1] = self.preflix_sum[i] + nums[i] 
+
+    def sumRange(self, left: int, right: int) -> int:
+        # Time:O(1)
+        return self.preflix_sum[right+1]-self.preflix_sum[left]
