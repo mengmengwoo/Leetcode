@@ -1,0 +1,12 @@
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        # Total Time: O(n) Total Space: O(1)
+        total = sum(nums) #O(n)
+        left_sum = 0
+
+        # O(n)
+        for i, num in enumerate(nums):
+            if left_sum == total-left_sum-num:
+                return i
+            left_sum += num
+        return -1
