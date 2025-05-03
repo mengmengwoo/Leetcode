@@ -1,0 +1,23 @@
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        '''
+        why not sliding window? because the list is not strictly increase,
+        meaning that increasing the window size will not necessarily increase the curr_sum
+
+        Logic:
+        1. Use a hash map to count the preflix sum you have seen 
+        2. calculate the preflix sum -->totK at i index
+        3. if the difference between totK and K is equal to any preflix sum that exist in the hash map,
+        then increment the result by the count of preflix sum in the hash map.
+        4. Update the hash map to count the preflix sum you have seen
+        '''
+        seen = {0:1}
+
+        tot = 0
+        result = 0
+        for i in range(len(nums)):
+            tot += nums[i]
+            if (tot - k) in seen:
+                result += seen[tot-k]
+            seen[tot] = seen.get(tot,0) + 1
+        return result
