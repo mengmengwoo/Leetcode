@@ -1,0 +1,21 @@
+class Solution:
+    def checkSubarraySum(self, nums: List[int], k: int) -> bool:
+        '''
+        1. Use a hash map to record the remainder that have been seen
+        2. if the remainder of the current preflix sum % k is already in the hash map, 
+            then you have added a multiple of k
+        3. return true if the difference of the stored previous remainder index and the current remainder index is >= 2,
+         
+        '''
+        seen_remainder = {0:-1} # this is for the case where the first instance
+        tot = 0
+        for i in range(len(nums)):
+            tot+=nums[i]
+            rem = tot % k if k != 0 else tot
+            if rem in seen_remainder:
+                if i - seen_remainder[rem] >= 2:
+                    return True
+            else:
+                seen_remainder[rem] = i  # only store first occurrence
+
+        return False
