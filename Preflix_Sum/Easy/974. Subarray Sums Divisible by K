@@ -1,0 +1,13 @@
+class Solution:
+    def subarraysDivByK(self, nums: List[int], k: int) -> int:
+        # Time: O(n), Space: O(k) --> k is the number of distinct seen reminder
+        seen = {0:1}
+        cnt = 0
+        prefix_sum = 0
+        for i in range(len(nums)):
+            prefix_sum += nums[i]
+            rem = prefix_sum % k
+            cnt +=seen.get(rem,0)
+            seen[rem]= seen.get(rem,0) + 1
+
+        return cnt
